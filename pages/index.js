@@ -4,6 +4,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Image from 'next/image';
 import {Box, Button, Container, IconButton, Stack, Typography} from "@mui/material";
+import FaqSection from "../src/components/home/FaqSection";
 
 export default function Index() {
     return (
@@ -115,6 +116,10 @@ export default function Index() {
 
                 </Box>
             </Container>
+
+        {/*     Faq Section*/}
+
+            <FaqSection/>
 
         </Box>
     );
