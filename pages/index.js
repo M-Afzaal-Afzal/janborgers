@@ -3,7 +3,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Image from 'next/image';
-import {Box, Container, IconButton, Stack, Typography} from "@mui/material";
+import {Box, Button, Container, IconButton, Stack, Typography} from "@mui/material";
 
 export default function Index() {
     return (
@@ -72,9 +72,36 @@ export default function Index() {
                     </Box>
                     {/*     Header End*/}
 
+                    {/* Hero Buttons Section*/}
+                    <Box sx={{
+                        alignItems: 'flex-end',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        mt: '2rem',
+                    }}>
+                        <Box sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}>
+                            <Button sx={{
+                                mb: '1rem'
+                            }} color={'primary'} variant={'contained'}>
+                                Connect Wallet
+                            </Button>
+
+                            <Button fullWidth color={'secondary'} variant={'contained'}>
+                                Mint
+                            </Button>
+                        </Box>
+                    </Box>
+
                 </Box>
 
             </Box>
+
+            {/* Text Section*/}
 
             <Container maxWidth={'xxl'}>
 
