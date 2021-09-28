@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {Box, Checkbox, Container, FormControlLabel, FormGroup, Stack} from "@mui/material";
+import {Box, Container, Fab, Popover} from "@mui/material";
 import Image from "next/image";
-import {traits} from "../../data/traits";
+import {traits} from "../../../data/traits";
+import SideBar from "./SideBar";
 
 const ImagesSection = () => {
 
@@ -95,6 +96,21 @@ const ImagesSection = () => {
         }
     }
 
+    // Mobile nav popover handler
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const open = Boolean(anchorEl);
+    const id = open ? 'simple-popover' : undefined;
+
     return (
         <Box py={'4rem'}>
 
@@ -102,61 +118,70 @@ const ImagesSection = () => {
 
                 <Box sx={{
                     display: 'grid',
-                    gridTemplateColumns: "250px 1fr",
+                    gridTemplateColumns: {
+                        xs: '1fr',
+                        lg: "250px 1fr",
+                    },
                     gridGap: '1rem',
                 }}>
 
+                    {/* Mobile nav --- Filters */}
+                    <Box sx={{
+                        display: {
+                            xs: 'block',
+                            lg: 'none',
+                        }
+                    }} display={'flex'} justifyContent={'flex-end'}>
+                        <Fab aria-describedby={id} onClick={handleClick} color="secondary" variant="extended">
+                            {/*<NavigationIcon sx={{ mr: 1 }} />*/}
+                            Filters
+                        </Fab>
+                        <Popover
+                            id={id}
+                            open={open}
+                            anchorEl={anchorEl}
+                            onClose={handleClose}
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'left',
+                            }}
+                        >
+                            <Box p={2}>
+
+                                <SideBar
+                                    filterHandler={filterHandler}
+                                    isFilteredByBackground={isFilteredByBackground}
+                                    isFilteredByBody={isFilteredByBody}
+                                    isFilteredByClothes={isFilteredByClothes}
+                                    isFilteredByEyes={isFilteredByEyes}
+                                    isFilteredByHairStyle={isFilteredByHairStyle}
+                                    isFilteredByHeadGears={isFilteredByHeadGears}
+                                    isFilteredBySunGlasses={isFilteredBySunGlasses}
+                                    isFilteredByWings={isFilteredByWings}
+                                />
+                            </Box>
+                        </Popover>
+                    </Box>
+
                     {/* Filters section container*/}
-                    <Stack top={0} position={'static'} direction={'column'} spacing={1}>
-                        <FormGroup>
-                            <FormControlLabel control={<Checkbox disableRipple checked={isFilteredByBackground}
-                                                                 onChange={filterHandler.bind(this, 'background')}/>}
-                                              label="Background"/>
-                        </FormGroup>
-
-                        <FormGroup>
-                            <FormControlLabel control={<Checkbox disableRipple checked={isFilteredByBody}
-                                                                 onChange={filterHandler.bind(this, 'body')}/>}
-                                              label="Body"/>
-                        </FormGroup>
-
-                        <FormGroup>
-                            <FormControlLabel control={<Checkbox disableRipple checked={isFilteredByClothes}
-                                                                 onChange={filterHandler.bind(this, 'clothes')}/>}
-                                              label="Clothes"/>
-                        </FormGroup>
-
-                        <FormGroup>
-                            <FormControlLabel control={<Checkbox disableRipple checked={isFilteredByEyes}
-                                                                 onChange={filterHandler.bind(this, 'eyes')}/>}
-                                              label="Eyes"/>
-                        </FormGroup>
-
-                        <FormGroup>
-                            <FormControlLabel control={<Checkbox disableRipple checked={isFilteredByHairStyle}
-                                                                 onChange={filterHandler.bind(this, 'hairStyle')}/>}
-                                              label="Hair Style"/>
-                        </FormGroup>
-
-                        <FormGroup>
-                            <FormControlLabel control={<Checkbox disableRipple checked={isFilteredByHeadGears}
-                                                                 onChange={filterHandler.bind(this, 'headGears')}/>}
-                                              label="Head Gears"/>
-                        </FormGroup>
-
-                        <FormGroup>
-                            <FormControlLabel control={<Checkbox disableRipple checked={isFilteredBySunGlasses}
-                                                                 onChange={filterHandler.bind(this, 'sunGlasses')}/>}
-                                              label="Sun Glasses"/>
-                        </FormGroup>
-
-                        <FormGroup>
-                            <FormControlLabel control={<Checkbox disableRipple checked={isFilteredByWings}
-                                                                 onChange={filterHandler.bind(this, 'wings')}/>}
-                                              label="Wings"/>
-                        </FormGroup>
-
-                    </Stack>
+                    <Box sx={{
+                        display: {
+                            xs: 'none',
+                            lg: 'block',
+                        }
+                    }}>
+                        <SideBar
+                            filterHandler={filterHandler}
+                            isFilteredByBackground={isFilteredByBackground}
+                            isFilteredByBody={isFilteredByBody}
+                            isFilteredByClothes={isFilteredByClothes}
+                            isFilteredByEyes={isFilteredByEyes}
+                            isFilteredByHairStyle={isFilteredByHairStyle}
+                            isFilteredByHeadGears={isFilteredByHeadGears}
+                            isFilteredBySunGlasses={isFilteredBySunGlasses}
+                            isFilteredByWings={isFilteredByWings}
+                        />
+                    </Box>
 
                     {/* Images section container */}
                     <Box sx={{

@@ -5,7 +5,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import Image from 'next/image';
 import {Box, Button, IconButton, Stack} from "@mui/material";
 import FaqSection from "../src/components/home/FaqSection";
-import ImagesSection from "../src/components/home/ImagesSection";
+import ImagesSection from "../src/components/home/ImagesSection/ImagesSection";
 import TextSection from "../src/components/home/TextSection";
 
 export default function Index() {
