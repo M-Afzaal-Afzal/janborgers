@@ -12,8 +12,10 @@
     "clsx": "latest",
     "next": "latest",
     "prop-types": "latest",
+    "query-string": "^7.0.1",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "use-query-params": "^1.2.3"
   },
   "scripts": {
     "dev": "next",

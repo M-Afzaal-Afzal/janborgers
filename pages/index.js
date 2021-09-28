@@ -3,8 +3,10 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Image from 'next/image';
-import {Box, Button, Container, IconButton, Stack, Typography} from "@mui/material";
+import {Box, Button, IconButton, Stack} from "@mui/material";
 import FaqSection from "../src/components/home/FaqSection";
+import ImagesSection from "../src/components/home/ImagesSection";
+import TextSection from "../src/components/home/TextSection";
 
 export default function Index() {
     return (
@@ -27,13 +29,11 @@ export default function Index() {
 
                     {/* Header*/}
                     <Box sx={{
-                        display: 'grid',
-                        gridTemplateColumns: "1fr 1fr 1fr",
+                        display: 'flex',
+                        justifyContent: 'space-between',
                     }}>
-                        {/* Box for jsut spacing purpose*/}
-                        <Box/>
 
-                        {/*central logo in the header*/}
+                        {/*left logo in the header*/}
                         <Box sx={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -104,21 +104,12 @@ export default function Index() {
 
             {/* Text Section*/}
 
-            <Container maxWidth={'xxl'}>
+            <TextSection/>
 
-                <Box p={'5rem 1rem'}>
+                {/*Images Section*/}
+            <ImagesSection/>
 
-                    <Typography variant={'body1'}>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum optio, sint. Consequuntur
-                        deleniti dicta fugit ipsam iure magni nemo nesciunt nostrum omnis placeat ratione,
-                        repellendus soluta totam vero voluptate voluptatem!
-                    </Typography>
-
-                </Box>
-            </Container>
-
-        {/*     Faq Section*/}
-
+                 {/*Faq Section*/}
             <FaqSection/>
 
         </Box>
