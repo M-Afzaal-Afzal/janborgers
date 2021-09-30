@@ -8,9 +8,9 @@ const TextSection = () => {
             <Box p={'5rem 1rem'}>
 
                 <Typography variant={'body1'}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum optio, sint. Consequuntur
-                    deleniti dicta fugit ipsam iure magni nemo nesciunt nostrum omnis placeat ratione,
-                    repellendus soluta totam vero voluptate voluptatem!
+                    The cryptocorn have emerged from the depths of the enchanted forest. They show their full beauty in
+                    the moonlight when the Bitcoin and Ethereum moon has risen. Get a part of this incredible community
+                    and join the club. Mint your own cryptocorn or buy and trade on opensea.
                 </Typography>
 
             </Box>

@@ -5,6 +5,36 @@ import AccordionCustom from "../common/AccordionCustom";
 
 const FaqSection = () => {
 
+    const faqs = [
+        {
+            id: 1,
+            question: `Why join the cryptocorn.club`,
+            ans: `Be part of a new community, part of an exclusive club. Together we go on a journey to the moon.
+Our community consists  of top tier investors of launchpads, ICO investors and NFT maniacs.
+`,
+        },
+        {
+            id: 2,
+            question: `How many cryptorns are available for minting?`,
+            ans: `There will be a maximum of 5000 cryptocorns. Minting will cost 0.03 ETH.
+We will reserve 300 cryptocorn´s for airdrops and giveaways.
+In support of our favourite launchpads, we decided to do an airdrop on top wallet holders of paid.network and trustswap.com.
+`,
+        },
+        {
+            id: 3,
+            question: `What benefit do I have,when I hold a cryptocorn?`,
+            ans: `We will open an exclusive club,to discuss investment opportunities in the space and get access in presale and seed allocations`,
+        },
+        {
+            id: 4,
+            question: `What about the rarity of a cryptocorn`,
+            ans: `We have 10 different background colours each of the same rarity, 5 different body colours some are more rare than other,5 different hairstyles with 6 different colours each,6 different horn colours ,6 wing colours,5 different eye expression and 2 different sunglasses.
+Rainbow colour is rare but not always. Sunglasses are a rare item aswell. Try to find out which makes a unique and rare unicorn.  All we can say they are all exclusive and adorable.
+`,
+        },
+    ]
+
     return (
 
 
@@ -24,62 +54,24 @@ const FaqSection = () => {
                     variant={'h1'}
                     fontSize={'3rem'}
                 >
-                   Frequently Asked Questions
+                    Frequently Asked Questions
                 </Typography>
 
                 {/*     Accordion Section     */}
 
                 <Box mt={'3rem'}>
 
-                    <AccordionCustom
-                        heading={'Why join the fang gang?'}
-                        description={[
-                            ' Fang Gang is a collection developed by four NFT fanatic that have been in the NFT space\n' +
-                            '                            since early March. All of us have worked on previous collections, helped out other\n' +
-                            '                            communities and are collectors ourselves.',
-                            'Our roadmap is comprised of real goals.',
-                            ' Besides having a clean, thoughtful collection which we will grow a tightly knit\n' +
-                            '                    community around, we\'re committed to help the preservation of wildlife by helping two\n' +
-                            '                    NGOs along the way.',
-                        ]}
-                    />
-
-
-                    <AccordionCustom
-                        heading={'What about the minting process?'}
-                        description={[
-                            ' Minting will start on Aug 30th right here, on fanggang.io. 0.04 ETH per Fangster. Max 10\n' +
-                            '                                Fangsters per transaction. The reveal will be the day after launch - 31st of August -\n' +
-                            '                                because who would want to wait a week just to see their sick NFT?\n' +
-                            '                            ',
-                        ]}
-                    />
-
-                    <AccordionCustom
-                        heading={'What can i do with my fangster?'}
-                        description={[
-                            ' Besides having the dopest character represent you on every platform, you\'ll be able to\n' +
-                            '                                trade it, use it to enter our giveaways and claim exclusive rewards that are for holders\n' +
-                            '                                only. Besides that it will also give you a voice in our community driven events.'
-                        ]}
-                    />
-
-                    <AccordionCustom
-                        heading={'Can\'t wait join the gang?'}
-                        description={[
-                            ' Head on over to our Discord server and get involved with the community. Or if you have\n' +
-                            '                                any questions about NFTs, ETH, the blockchain, OpenSea or anything else! We\'re happy to\n' +
-                            '                                help.',
-                        ]}
-                    />
-
-                    <AccordionCustom
-                        heading={'Tokenomicz'}
-                        description={[
-                            ' We have reserved 60 Fangsters for giveaways, events, collabs and 4 to portray our team\n' +
-                            '                                members.',
-                        ]}
-                    />
+                    {
+                        faqs.map(({id,question,ans}) => (
+                            <AccordionCustom
+                                key={id}
+                                heading={question}
+                                description={[
+                                    ans
+                                ]}
+                            />
+                        ))
+                    }
 
                 </Box>
 
