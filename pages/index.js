@@ -40,10 +40,13 @@ export default function Index() {
                             alignItems: 'center',
                             fontSize: '2rem',
                             color: '#fff',
+                            background: 'rgb(255,255,255)',
+                            borderRadius: '50%',
+                            padding: '6px',
                             fontWeight: 'bold',
-                            border: '1px solid #eee',
+                            // border: '1px solid #eee',
                         }}>
-                            Logo
+                            <Image src={'/logo.png'} width={80} height={79}/>
                         </Box>
 
                         {/* Right side social icons on header*/}
