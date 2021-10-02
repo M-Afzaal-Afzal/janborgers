@@ -69,7 +69,7 @@ export default function Index() {
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent: 'flex-end',
-                            alignItems: 'center',
+                            alignItems: 'flex-end',
                         }}>
 
                             {/* Navigation icons*/}

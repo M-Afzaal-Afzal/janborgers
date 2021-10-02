@@ -9,7 +9,7 @@ const AccordionCustom = ({heading, description}) => {
                 background: '#054D1A',
                 margin: 0,
             },
-            background: '#19880B',
+            background: '#19857b',
             color: '#fff',
             my: '8px',
         }}>
