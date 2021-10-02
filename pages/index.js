@@ -47,7 +47,7 @@ export default function Index() {
                             fontWeight: 'bold',
                             // border: '1px solid #eee',
                         }}>
-                            <Image src={'/logo.png'} width={80} height={79}/>
+                            <Image src={'/logo.png'} width={160} height={158}/>
                         </Box>
 
                         {/* Right side social icons on header*/}
