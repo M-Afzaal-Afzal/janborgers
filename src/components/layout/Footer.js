@@ -34,11 +34,11 @@ const Footer = () => {
                             borderRadius: '50%',
                             padding: '6px',
                             fontWeight: 'bold',
-                            width: '100px',
-                            height: '100px',
+                            width: '180px',
+                            height: '180px',
                             // border: '1px solid #eee',
                         }}>
-                            <Image src={'/logo.png'} width={100} height={100}/>
+                            <Image src={'/logo.png'} width={180} height={180}/>
                         </Box>
                     </Box>
 

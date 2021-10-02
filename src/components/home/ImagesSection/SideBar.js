@@ -9,7 +9,6 @@ import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
 
 const SideBar = ({
-                     filterHandler,
                      isFilteredByBackground,
                      isFilteredByBody,
                      isFilteredByClothes,
@@ -178,7 +177,6 @@ const SideBar = ({
         `feathergrey`,
         `lightblue`,
         `mint`,
-        `outline`,
         `rainbow`,
         `yellow`,
     ];

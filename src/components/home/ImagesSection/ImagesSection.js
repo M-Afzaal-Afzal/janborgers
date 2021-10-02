@@ -6,7 +6,7 @@ import SideBar from "./SideBar";
 
 const ImagesSection = () => {
 
-    const [selectedTraits, setSelectedTraits] = useState(traits.allImages);
+    const [selectedTraits, setSelectedTraits] = useState([...Array(20)].fill(`/logo.png`));
 
     const [isFilteredByBackground, setIsFilteredByBackground] = useState(false);
     const [isFilteredByBody, setIsFilteredByBody] = useState(false);
@@ -17,84 +17,21 @@ const ImagesSection = () => {
     const [isFilteredBySunGlasses, setIsFilteredBySunGlasses] = useState(false);
     const [isFilteredByWings, setIsFilteredByWings] = useState(false);
 
-    // Applied filters
-    const [appliedFilters, setAppliedFilters] = useState([]);
-
-    useEffect(() => {
-        if (appliedFilters.length) {
-            let updatedTraits = [];
-            appliedFilters.forEach((trait) => {
-                updatedTraits = [...updatedTraits, ...traits[`${trait}Images`]];
-            })
-            setSelectedTraits(updatedTraits);
-        } else {
-            setSelectedTraits(traits.allImages);
-        }
-
-        console.log(appliedFilters)
-    }, [appliedFilters.length])
-
     // apply filters handler
 
-    const appliedFiltersHandler = (filterName) => {
-        if (appliedFilters.includes(filterName)) {
-            const filteredAppliedFilters = appliedFilters.filter((value => value !== filterName));
-            setAppliedFilters(filteredAppliedFilters);
-        } else {
-            const filteredAppliedFilters = [...appliedFilters, filterName];
-            setAppliedFilters(filteredAppliedFilters);
-        }
-    }
+    // const appliedFiltersHandler = (filterName) => {
+    //     if (appliedFilters.includes(filterName)) {
+    //         const filteredAppliedFilters = appliedFilters.filter((value => value !== filterName));
+    //         setAppliedFilters(filteredAppliedFilters);
+    //     } else {
+    //         const filteredAppliedFilters = [...appliedFilters, filterName];
+    //         setAppliedFilters(filteredAppliedFilters);
+    //     }
+    // }
 
     // Filterby Handler
 
-    const filterHandler = (filterName) => {
-        switch (filterName) {
-            case 'background': {
-                setIsFilteredByBackground((prevState => !prevState));
-                appliedFiltersHandler('background')
 
-                break;
-            }
-            case 'body': {
-                setIsFilteredByBody((prevState => !prevState));
-                appliedFiltersHandler('body')
-
-                break;
-            }
-            case 'clothes': {
-                setIsFilteredByClothes((prevState => !prevState));
-                appliedFiltersHandler('clothes')
-                break;
-            }
-            case 'eyes': {
-                setIsFilteredByEyes((prevState => !prevState));
-                appliedFiltersHandler('eyes')
-                break;
-            }
-            case 'hairStyle': {
-                setIsFilteredByHairStyle((prevState => !prevState));
-                appliedFiltersHandler('hairStyles')
-                break;
-            }
-            case 'headGears': {
-                setIsFilteredByHeadGears((prevState => !prevState));
-                appliedFiltersHandler('headGears')
-                break;
-            }
-            case 'sunGlasses': {
-                setIsFilteredBySunGlasses((prevState => !prevState));
-                appliedFiltersHandler('sunGlasses')
-                break;
-            }
-            case 'wings': {
-                setIsFilteredByWings((prevState => !prevState));
-                appliedFiltersHandler('wings')
-
-                break;
-            }
-        }
-    }
 
     // Mobile nav popover handler
 
@@ -152,7 +89,7 @@ const ImagesSection = () => {
                             }} p={2}>
 
                                 <SideBar
-                                    filterHandler={filterHandler}
+                                    // filterHandler={filterHandler}
                                     isFilteredByBackground={isFilteredByBackground}
                                     isFilteredByBody={isFilteredByBody}
                                     isFilteredByClothes={isFilteredByClothes}
@@ -174,7 +111,7 @@ const ImagesSection = () => {
                         }
                     }}>
                         <SideBar
-                            filterHandler={filterHandler}
+                            // filterHandler={filterHandler}
                             isFilteredByBackground={isFilteredByBackground}
                             isFilteredByBody={isFilteredByBody}
                             isFilteredByClothes={isFilteredByClothes}

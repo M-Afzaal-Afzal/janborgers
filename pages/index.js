@@ -10,6 +10,7 @@ import TextSection from "../src/components/home/TextSection";
 import RoadmapSection from "../src/components/home/RoadmapSection";
 import Footer from "../src/components/layout/Footer";
 import {useEffect, useState} from "react";
+import EmailSection from "../src/components/home/EmailSection";
 
 export default function Index() {
 
@@ -55,18 +56,50 @@ export default function Index() {
                             background: 'rgb(255,255,255)',
                             borderRadius: '50%',
                             padding: '6px',
+                            width: "160px",
+                            height: '160px',
                             fontWeight: 'bold',
                             // border: '1px solid #eee',
                         }}>
                             <Image src={'/logo.png'} width={160} height={158}/>
                         </Box>
 
-                        {/* Right side social icons on header*/}
+                        {/* Right side r*/}
                         <Box sx={{
                             display: 'flex',
+                            flexDirection: 'column',
                             justifyContent: 'flex-end',
                             alignItems: 'center',
                         }}>
+
+                            {/* Navigation icons*/}
+
+                            <Stack direction={'row'} sx={{
+                                width: '100%',
+                                mb: '4rem',
+                            }} justifyContent={'stretch'} spacing={1} mt={'1rem'}>
+                                <Button sx={{
+                                    color: '#fff',
+                                }} onClick={itemToNavigateHandler.bind(this, 'gallery')} fullWidth
+                                         variant={'outlined'}>
+                                    Gallery
+                                </Button>
+                                <Button sx={{
+                                    color: '#fff',
+                                }} onClick={itemToNavigateHandler.bind(this, 'roadmap')} fullWidth
+                                        variant={'outlined'}>
+                                    Roadmap
+                                </Button>
+                                <Button sx={{
+                                    color: '#fff',
+                                }} onClick={itemToNavigateHandler.bind(this, 'faq')} fullWidth
+                                        variant={'outlined'}>
+                                    Faq
+                                </Button>
+                            </Stack>
+
+                            {/*social icons on header*/}
+
                             <Stack direction={'row'} spacing={2}>
                                 <IconButton sx={{
                                     color: "#fff"
@@ -107,7 +140,7 @@ export default function Index() {
                         }}>
                             <Box sx={{
                                 width: '100%',
-                                mt: '-3rem',
+                                // mt: '-3rem',
                             }}>
                                 <Button sx={{
                                     mb: '1rem'
@@ -120,22 +153,6 @@ export default function Index() {
                                 </Button>
                             </Box>
 
-                            <Stack sx={{
-                                width: '100%',
-                            }} justifyContent={'stretch'} spacing={1} mt={'4rem'}>
-                                <Button onClick={itemToNavigateHandler.bind(this, 'gallery')} fullWidth
-                                        color={'secondary'} variant={'contained'}>
-                                    Gallery
-                                </Button>
-                                <Button onClick={itemToNavigateHandler.bind(this, 'roadmap')} fullWidth
-                                        color={'secondary'} variant={'contained'}>
-                                    Roadmap
-                                </Button>
-                                <Button onClick={itemToNavigateHandler.bind(this, 'faq')} fullWidth color={'secondary'}
-                                        variant={'contained'}>
-                                    Faq
-                                </Button>
-                            </Stack>
                         </Box>
 
 
@@ -148,6 +165,9 @@ export default function Index() {
             {/* Text Section*/}
 
             <TextSection/>
+
+            {/* Email Section*/}
+            <EmailSection/>
 
             {/*Images Section*/}
             <ImagesSection/>
