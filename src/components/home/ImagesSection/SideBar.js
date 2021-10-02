@@ -75,6 +75,114 @@ const SideBar = ({
 
     };
 
+    // Background Traits Options
+
+    const backgroundTraits = [
+        `Blue`,
+        `Dark Red`,
+        `Green`,
+        `Grey`,
+        `Olive`,
+        `Orange`,
+        `Purple`,
+        `Rose`,
+        `Turqouise`,
+        `Yellow`,
+    ];
+
+    // Bodies traits
+    const bodiesTraits = [
+        `beige`,
+        `black`,
+        `brown`,
+        `grey`,
+        `white`,
+    ];
+
+    // clothes traits
+    const clothesTraits = [
+      `jumper_blue-ether`,
+        `jumper_green-ether`,
+        `jumper_pink-ether`,
+        `jumper_red-ether`,
+        `polo_grey-ether`,
+        `polo_orange-bitcoin`,
+        `Scarf_purple`,
+        `skirt_black-ether`,
+        `skirt_yellow-bitcoin`,
+        `top_green-bitcoin`,
+    ];
+
+    // Eyes Traits
+    const eyesTraits = [
+        `afraid`,
+        `angry`,
+        `cute`,
+        `lookaround`,
+        `pensive`,
+    ];
+
+    // Hair Styles Traits
+    const hairStylesTraits = [
+      `A1_pink`,
+      `A2_blue`,
+      `A3_red`,
+      `A4_rainbow`,
+      `A5_brown`,
+      `A6_green`,
+      `B1_pink`,
+      `B2_lightbrown`,
+      `B3_rainbow`,
+      `B4_lightblue`,
+      `B5_lightgreen`,
+      `B6_lightyellow`,
+      `C1_rainbow`,
+      `C2_brown`,
+      `C3_turqouise`,
+      `C4_pink`,
+      `C5_yellow`,
+      `C6_green`,
+      `D1_red`,
+      `D2_lightbrown`,
+      `D3_turqouise`,
+      `D4_rainbow`,
+      `D5_blue`,
+      `D6_green`,
+      `E1_lightblue`,
+      `E2_red`,
+      `E3_yellow`,
+      `E4_purple`,
+      `E5_lightbrown`,
+      `E6_rainbow`,
+    ];
+
+    //Head Gears Traits
+    const headGearsTraits = [
+        `horn_orange`,
+        `horn_pink`,
+        `horn_rainbow`,
+        `horn_yellow`,
+        `horn-grey`,
+        `horn-turqouise`,
+    ];
+
+    // Sunglasses Traits
+    const sunGlassesTraits = [
+      `blue`,
+      `women`
+    ];
+
+    // Wings Traits
+    const wingsTraits = [
+        `coral`,
+        `feathergrey`,
+        `lightblue`,
+        `mint`,
+        `outline`,
+        `rainbow`,
+        `yellow`,
+    ];
+
     return (
         <Stack direction={'column'} spacing={1}>
 
@@ -99,12 +207,15 @@ const SideBar = ({
 
                 <Collapse in={isOpenBackgrounds} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItemButton sx={{pl: 4}}>
-                            {/*<ListItemIcon>*/}
-                            {/*    <StarBorder />*/}
-                            {/*</ListItemIcon>*/}
-                            <ListItemText primary="Starred"/>
-                        </ListItemButton>
+
+                        {
+                            backgroundTraits.map(trait => (
+                                <ListItemButton key={trait} sx={{pl: 4}}>
+                                    <ListItemText primary={trait}/>
+                                </ListItemButton>
+                            ))
+                        }
+
                     </List>
                 </Collapse>
 
@@ -119,12 +230,13 @@ const SideBar = ({
 
                 <Collapse in={isOpenBodies} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItemButton sx={{pl: 4}}>
-                            {/*<ListItemIcon>*/}
-                            {/*    <StarBorder />*/}
-                            {/*</ListItemIcon>*/}
-                            <ListItemText primary="Starred"/>
-                        </ListItemButton>
+                        {
+                            bodiesTraits.map(trait => (
+                                <ListItemButton key={trait} sx={{pl: 4}}>
+                                    <ListItemText primary={trait}/>
+                                </ListItemButton>
+                            ))
+                        }
                     </List>
                 </Collapse>
 
@@ -139,12 +251,13 @@ const SideBar = ({
 
                 <Collapse in={isOpenClothes} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItemButton sx={{pl: 4}}>
-                            {/*<ListItemIcon>*/}
-                            {/*    <StarBorder />*/}
-                            {/*</ListItemIcon>*/}
-                            <ListItemText primary="Starred"/>
-                        </ListItemButton>
+                        {
+                            clothesTraits.map(trait => (
+                                <ListItemButton key={trait} sx={{pl: 4}}>
+                                    <ListItemText primary={trait}/>
+                                </ListItemButton>
+                            ))
+                        }
                     </List>
                 </Collapse>
 
@@ -159,12 +272,13 @@ const SideBar = ({
 
                 <Collapse in={isOpenEyes} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItemButton sx={{pl: 4}}>
-                            {/*<ListItemIcon>*/}
-                            {/*    <StarBorder />*/}
-                            {/*</ListItemIcon>*/}
-                            <ListItemText primary="Starred"/>
-                        </ListItemButton>
+                        {
+                            eyesTraits.map(trait => (
+                                <ListItemButton key={trait} sx={{pl: 4}}>
+                                    <ListItemText primary={trait}/>
+                                </ListItemButton>
+                            ))
+                        }
                     </List>
                 </Collapse>
 
@@ -179,12 +293,13 @@ const SideBar = ({
 
                 <Collapse in={isOpenHairStyles} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItemButton sx={{pl: 4}}>
-                            {/*<ListItemIcon>*/}
-                            {/*    <StarBorder />*/}
-                            {/*</ListItemIcon>*/}
-                            <ListItemText primary="Starred"/>
-                        </ListItemButton>
+                        {
+                            hairStylesTraits.map(trait => (
+                                <ListItemButton key={trait} sx={{pl: 4}}>
+                                    <ListItemText primary={trait}/>
+                                </ListItemButton>
+                            ))
+                        }
                     </List>
                 </Collapse>
 
@@ -199,12 +314,13 @@ const SideBar = ({
 
                 <Collapse in={isOpenHeadGears} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItemButton sx={{pl: 4}}>
-                            {/*<ListItemIcon>*/}
-                            {/*    <StarBorder />*/}
-                            {/*</ListItemIcon>*/}
-                            <ListItemText primary="Starred"/>
-                        </ListItemButton>
+                        {
+                            headGearsTraits.map(trait => (
+                                <ListItemButton key={trait} sx={{pl: 4}}>
+                                    <ListItemText primary={trait}/>
+                                </ListItemButton>
+                            ))
+                        }
                     </List>
                 </Collapse>
 
@@ -219,12 +335,13 @@ const SideBar = ({
 
                 <Collapse in={isOpenSunGlasses} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItemButton sx={{pl: 4}}>
-                            {/*<ListItemIcon>*/}
-                            {/*    <StarBorder />*/}
-                            {/*</ListItemIcon>*/}
-                            <ListItemText primary="Starred"/>
-                        </ListItemButton>
+                        {
+                            sunGlassesTraits.map(trait => (
+                                <ListItemButton key={trait} sx={{pl: 4}}>
+                                    <ListItemText primary={trait}/>
+                                </ListItemButton>
+                            ))
+                        }
                     </List>
                 </Collapse>
 
@@ -239,12 +356,13 @@ const SideBar = ({
 
                 <Collapse in={isOpenWings} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItemButton sx={{pl: 4}}>
-                            {/*<ListItemIcon>*/}
-                            {/*    <StarBorder />*/}
-                            {/*</ListItemIcon>*/}
-                            <ListItemText primary="Starred"/>
-                        </ListItemButton>
+                        {
+                            wingsTraits.map(trait => (
+                                <ListItemButton key={trait} sx={{pl: 4}}>
+                                    <ListItemText primary={trait}/>
+                                </ListItemButton>
+                            ))
+                        }
                     </List>
                 </Collapse>
 
