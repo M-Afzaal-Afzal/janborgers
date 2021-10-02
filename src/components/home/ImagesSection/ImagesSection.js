@@ -146,7 +146,10 @@ const ImagesSection = () => {
                                 horizontal: 'left',
                             }}
                         >
-                            <Box p={2}>
+                            <Box  sx={{
+                                maxHeight: '20rem',
+                                overflowY: 'scroll',
+                            }} p={2}>
 
                                 <SideBar
                                     filterHandler={filterHandler}
@@ -186,7 +189,11 @@ const ImagesSection = () => {
                     {/* Images section container */}
                     <Box sx={{
                         display: 'grid',
-                        gridTemplateColumns: "1fr 1fr 1fr",
+                        gridTemplateColumns: {
+                            xs: '1fr',
+                            md: '1fr 1fr',
+                            lg: '1fr 1fr 1fr',
+                        },
                         gridGap: '8px',
                         maxHeight: '100vh',
                         overflowY: 'scroll',
