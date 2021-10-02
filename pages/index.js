@@ -8,8 +8,19 @@ import FaqSection from "../src/components/home/FaqSection";
 import ImagesSection from "../src/components/home/ImagesSection/ImagesSection";
 import TextSection from "../src/components/home/TextSection";
 import RoadmapSection from "../src/components/home/RoadmapSection";
+import Footer from "../src/components/layout/Footer";
+import {useEffect, useState} from "react";
 
 export default function Index() {
+
+    const itemToNavigateHandler = (item) => {
+
+
+        document.getElementById(item.toLowerCase()).scrollIntoView({
+            behavior: 'smooth',
+        })
+    }
+
     return (
         <Box>
 
@@ -92,17 +103,42 @@ export default function Index() {
                             flexDirection: 'column',
                             justifyContent: 'center',
                             alignItems: 'center',
+                            maxWidth: '10rem',
                         }}>
-                            <Button sx={{
-                                mb: '1rem'
-                            }} color={'primary'} variant={'contained'}>
-                                Connect Wallet
-                            </Button>
+                            <Box sx={{
+                                width: '100%',
+                                mt: '-3rem',
+                            }}>
+                                <Button sx={{
+                                    mb: '1rem'
+                                }} color={'primary'} variant={'contained'}>
+                                    Connect Wallet
+                                </Button>
 
-                            <Button fullWidth color={'secondary'} variant={'contained'}>
-                                Mint
-                            </Button>
+                                <Button fullWidth color={'secondary'} variant={'contained'}>
+                                    Mint
+                                </Button>
+                            </Box>
+
+                            <Stack sx={{
+                                width: '100%',
+                            }} justifyContent={'stretch'} spacing={1} mt={'4rem'}>
+                                <Button onClick={itemToNavigateHandler.bind(this, 'gallery')} fullWidth
+                                        color={'secondary'} variant={'contained'}>
+                                    Gallery
+                                </Button>
+                                <Button onClick={itemToNavigateHandler.bind(this, 'roadmap')} fullWidth
+                                        color={'secondary'} variant={'contained'}>
+                                    Roadmap
+                                </Button>
+                                <Button onClick={itemToNavigateHandler.bind(this, 'faq')} fullWidth color={'secondary'}
+                                        variant={'contained'}>
+                                    Faq
+                                </Button>
+                            </Stack>
                         </Box>
+
+
                     </Box>
 
                 </Box>
@@ -120,6 +156,10 @@ export default function Index() {
 
             {/*Faq Section*/}
             <FaqSection/>
+
+            {/*     Footer Section */}
+            <Footer/>
+
 
         </Box>
     );

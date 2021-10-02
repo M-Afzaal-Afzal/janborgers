@@ -30,7 +30,7 @@ In support of our favourite launchpads, we decided to do an airdrop on top walle
             id: 4,
             question: `What about the rarity of a cryptocorn`,
             ans: `We have 10 different background colours each of the same rarity, 5 different body colours some are more rare than other,5 different hairstyles with 6 different colours each,6 different horn colours ,6 wing colours,5 different eye expression and 2 different sunglasses.
-Rainbow colour is rare but not always. Sunglasses are a rare item aswell. We created 10 different clothes, 2 of them a rare. Try to find out which makes a unique and rare unicorn. All we can say they are all exclusive and adorable.`,
+Rainbow colour is rare but not always. Sunglasses are a rare item as well. We created 10 different clothes, 2 of them are rare. Try to find out which makes a unique and rare unicorn. All we can say they are all exclusive and adorable.`,
         },
     ]
 

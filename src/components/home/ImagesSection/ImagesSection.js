@@ -112,7 +112,7 @@ const ImagesSection = () => {
     const id = open ? 'simple-popover' : undefined;
 
     return (
-        <Box py={'4rem'}>
+        <Box id={'gallery'} py={'4rem'}>
 
             <Container maxWidth={'xxl'}>
 

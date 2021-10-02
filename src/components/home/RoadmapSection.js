@@ -159,7 +159,7 @@ const RoadmapSection = () => {
                         {/*    Heading*/}
                         {/*</Typography>*/}
 
-                        Release breeding features for 3D cryptocorn´s and provide land fort he cryptorn´s in the virtual cryptoforest.
+                        Release breeding features for 3D cryptocorn´s and provide land for the cryptorn´s in the virtual cryptoforest.
 
                         {/* Top Label*/}
                         <Box sx={{
