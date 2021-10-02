@@ -7,6 +7,7 @@ import {Box, Button, IconButton, Stack} from "@mui/material";
 import FaqSection from "../src/components/home/FaqSection";
 import ImagesSection from "../src/components/home/ImagesSection/ImagesSection";
 import TextSection from "../src/components/home/TextSection";
+import RoadmapSection from "../src/components/home/RoadmapSection";
 
 export default function Index() {
     return (
@@ -111,6 +112,8 @@ export default function Index() {
 
                 {/*Images Section*/}
             <ImagesSection/>
+
+            <RoadmapSection/>
 
                  {/*Faq Section*/}
             <FaqSection/>
