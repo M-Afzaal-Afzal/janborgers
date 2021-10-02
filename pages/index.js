@@ -60,7 +60,10 @@ export default function Index() {
                                 <IconButton sx={{
                                     color: "#fff"
                                 }}>
-                                    <InstagramIcon/>
+                                    <Box>
+                                        <Image src={'/opensea.png'} width={25} height={25}/>
+                                    </Box>
+                                    {/*<InstagramIcon/>*/}
                                 </IconButton>
                                 <IconButton sx={{
                                     color: "#fff"
@@ -110,12 +113,12 @@ export default function Index() {
 
             <TextSection/>
 
-                {/*Images Section*/}
+            {/*Images Section*/}
             <ImagesSection/>
 
             <RoadmapSection/>
 
-                 {/*Faq Section*/}
+            {/*Faq Section*/}
             <FaqSection/>
 
         </Box>
